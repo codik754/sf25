@@ -35,6 +35,9 @@ void DbMysql::connect(){
       std::string str = "Error: can't connect to database. " + std::string(mysql_error(&mysql_));
       throw str;
    } 
+
+   //Настрпиваем кодировку
+   mysql_set_character_set(&mysql_, "utf8");
 }
 
 //Отключиться от серверу
